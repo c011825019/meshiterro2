@@ -1,0 +1,18 @@
+<h3>投稿</h3>
+<%= form_with model: post_image, local: true do |f| %>
+  <div>
+    <%= f.label :image %>
+    <%= f.file_field :image, accept: "image/*" %>
+  </div>
+  <div>
+    <%= f.label :shop_name %>
+    <%= f.text_field :shop_name %>
+  </div>
+  <div>
+    <%= f.label :caption %>
+    <%= f.text_area :caption %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
