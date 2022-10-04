@@ -7,5 +7,6 @@
     <p>ショップ名: <%= post_image.shop_name %></p>
     <p>説明: <%= post_image.caption %></p>
     <p>ユーザー名: <%= post_image.user.name %></p>
+    <%= render 'favorites/btn', post_image: post_image %>
   </div>
 <% end %>

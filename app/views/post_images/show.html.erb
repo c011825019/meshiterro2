@@ -7,6 +7,7 @@
   <% if @post_image.user == current_user %>
     <%= link_to "削除", post_image_path(@post_image), method: :delete %>
   <% end %>
+  <%= render 'favorites/btn', post_image: @post_image %>
 </div>
 <div>
   <%= render 'post_comments/count', post_image: @post_image %>
