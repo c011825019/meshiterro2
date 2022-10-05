@@ -1,4 +1,13 @@
 <h3>投稿</h3>
+<% if post_image.errors.any? %>
+  <%= post_image.errors.count %>件のエラーが発生しました
+  <ul>
+    <% post_image.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_with model: post_image, local: true do |f| %>
   <div>
     <%= f.label :image %>
