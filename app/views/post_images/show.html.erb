@@ -12,14 +12,13 @@
           </p>
           <p class="card-text">説明: <%= @post_image.caption %></p>
           <span><i class="fas fa-user"></i> By <%= @post_image.user.name %> | </span>
-          <span><%= @post_image.post_comments.count %> コメント</span>
+          <span><%= render 'post_comments/count', post_image: @post_image %></span>
         </div>
       </div>
     </div>
   </div>
 </div>
 <div>
-  <%= render 'post_comments/count', post_image: @post_image %>
   <%= render 'post_comments/index', post_image: @post_image, post_comments: @post_comments %>
 </div>
 
