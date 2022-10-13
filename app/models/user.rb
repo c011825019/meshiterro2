@@ -20,4 +20,8 @@ class User < ApplicationRecord
     end
     profile_image.variant(resize_to_limit: [width, height]).processed
   end
+
+  def followed_by?(user)
+    passive_relationships.find_by(following_id: user.id).present?
+  end
 end
