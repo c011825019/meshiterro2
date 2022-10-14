@@ -5,9 +5,9 @@ class RelationshipsController < ApplicationController
     redirect_to request.referer
   end
 
-  def destory
+  def destroy
     follow = current_user.active_relationships.find_by(follower_id: params[:user_id])
-    follow.destory
+    follow.destroy
     redirect_to request.referer
   end
 end
