@@ -1,8 +1,12 @@
 <h1>Users#show</h1>
 <div>
-  <h3><%= @user.name %></h3>
-  <%= image_tag @user.get_profile_image(100, 100) %>
-  <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+  <h3><%= image_tag @user.get_profile_image(100, 100) %> <%= @user.name %></h3>
+  <%= render 'relationships/btn', user: @user %>
+  <% if @user == current_user %>
+    <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+  <% end %>
+  <%= link_to "フォロー一覧", follows_user_path %>
+  <%= link_to "フォロワー一覧", followers_user_path %>
 </div>
 
 <%= render 'post_images/index', post_images: @post_images %>
